@@ -26,38 +26,63 @@ class ViewController: UIViewController {
         flipLabel.attributedText = attribtext
     }
     
+    
     @IBOutlet weak var flipLabel: UILabel!
     
-    var flipCount = 0 //翻牌次數
+    @IBOutlet var cards: [UIButton]!
+    
+    
+    var flipCount = 0 {//翻牌次數
+        didSet{ //property observer 當此變數變化時呼叫
+            flipLabel.text = "Flips : " + String(flipCount)
+            //updateFlipCountLabel()
+        }
+    }
+    
     @IBAction func touchCard(_ sender: UIButton) {
         
         var title = ""
-        let positveFace = ["😀","😄"]//正面圖案
-        let negativeFace = ["1","2"]//背面圖案
+        let font = UIFont.systemFont(ofSize: 44)
+        let attributes = [NSAttributedString.Key.font: font]
+        let cardID = cards.firstIndex(of: sender)
+        
+        let positveFace = [""]//正面圖案
+        let negativeFace = ["🍔","🍰","🍥","🍣","🍥","🍰","🍔","🍣"]//背面圖案
         
         if let tit = sender.titleLabel!.text{
             title = tit
         }
-
-        if(sender.currentTitle == nil){
-            sender.setTitle(title, for: UIControl.State.normal)
+        
+        
+        if(sender.currentAttributedTitle == nil){
+            let message = NSAttributedString(string: title, attributes: attributes)
+            sender.setAttributedTitle(message, for: UIControl.State.normal)
         }
         
+        
+        
         //判斷現在卡片是正面還是反面
-        //翻牌時的判斷
-        if let cardIndex = positveFace.firstIndex(of: title){
-            sender.setTitle(negativeFace[cardIndex], for: UIControl.State.normal)
-            sender.backgroundColor = #colorLiteral(red: 1, green: 0.3563713431, blue: 0.3826515079, alpha: 1) //type #colorLiteral
+        //翻牌時的判斷(目前為正面)
+        if !negativeFace.contains(sender.currentAttributedTitle!.string){
+            
+            let message = NSAttributedString(string: negativeFace[cardID!], attributes: attributes)
+            sender.setAttributedTitle(message, for: UIControl.State.normal)
+            let frontcolor = #colorLiteral(red: 1, green: 0.3563713431, blue: 0.3826515079, alpha: 1)
+            sender.backgroundColor = frontcolor//type #colorLiteral
         }
-        //翻牌時的判斷
-        if let cardIndex = negativeFace.firstIndex(of: title){
-            sender.setTitle(positveFace[cardIndex], for: UIControl.State.normal)
-            sender.backgroundColor = #colorLiteral(red: 1, green: 0.7065654397, blue: 0.1603511274, alpha: 1) //type #colorLiteral
+        //翻牌時的判斷(目前為反面)
+        else{
+            let message = NSAttributedString(string: "", attributes: attributes)
+            sender.setAttributedTitle(message, for: UIControl.State.normal)
+            let bgcolor = #colorLiteral(red: 1, green: 0.7065654397, blue: 0.1603511274, alpha: 1)
+            sender.backgroundColor = bgcolor //type #colorLiteral
         }
 
+        
         flipCount += 1
-        flipLabel.text = "Flips : " + String(flipCount)
+        //flipLabel.text = "Flips : " + String(flipCount)
         //print(sender.titleLabel!.text!)//取得按鈕上的文字
+        
     }
     
 }
