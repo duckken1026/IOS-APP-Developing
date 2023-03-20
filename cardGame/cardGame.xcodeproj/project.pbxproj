@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2D7CEEF29C431170059F508 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D7CEEE29C431170059F508 /* Card.swift */; };
+		D2D7CEF129C431660059F508 /* MatchingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D7CEF029C431660059F508 /* MatchingGame.swift */; };
 		D2FA346429BAF5E200810AA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA346329BAF5E200810AA8 /* AppDelegate.swift */; };
 		D2FA346629BAF5E200810AA8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA346529BAF5E200810AA8 /* SceneDelegate.swift */; };
 		D2FA346829BAF5E200810AA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA346729BAF5E200810AA8 /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D2D7CEEE29C431170059F508 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		D2D7CEF029C431660059F508 /* MatchingGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingGame.swift; sourceTree = "<group>"; };
 		D2FA346029BAF5E200810AA8 /* cardGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cardGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2FA346329BAF5E200810AA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2FA346529BAF5E200810AA8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 		D2FA345729BAF5E200810AA8 = {
 			isa = PBXGroup;
 			children = (
+				D2D7CEF029C431660059F508 /* MatchingGame.swift */,
+				D2D7CEEE29C431170059F508 /* Card.swift */,
 				D2FA346229BAF5E200810AA8 /* cardGame */,
 				D2FA347929BAF5E300810AA8 /* cardGameTests */,
 				D2FA348329BAF5E300810AA8 /* cardGameUITests */,
@@ -260,7 +266,9 @@
 			files = (
 				D2FA346829BAF5E200810AA8 /* ViewController.swift in Sources */,
 				D2FA346429BAF5E200810AA8 /* AppDelegate.swift in Sources */,
+				D2D7CEF129C431660059F508 /* MatchingGame.swift in Sources */,
 				D2FA346629BAF5E200810AA8 /* SceneDelegate.swift in Sources */,
+				D2D7CEEF29C431170059F508 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
