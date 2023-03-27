@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional seup after loading the view.
         updateFlipCountLabel()
+        cards.shuffle()
     }
     
     //更改翻面次數字型
@@ -32,6 +33,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var flipLabel: UILabel!
     
     @IBOutlet var cards: [UIButton]!
+    
     let positveFace = [""]//正面圖案
     var negativeFace = ["🍔","🍰","🍥","🍣","🍓","🍮","🍟","🍕"]//背面圖案
     var font = UIFont.systemFont(ofSize: 44)
@@ -47,38 +49,66 @@ class ViewController: UIViewController {
     
     @IBAction func touchCard(_ sender: UIButton) {
         
-        if let index = cards.firstIndex(of: sender){
-            let card = game.chooseCard(at: index)
-            updateCardFace();
+        var countable = true;
+        if allCardface != 1{
+            if let index = cards.firstIndex(of: sender){
+                if(game.isMatched(at: index) == true){
+                    countable = false
+                }
+                else{
+                    countable = true
+                let card = game.chooseCard(at: index)
+                updateCardFace();
+                }
+            }
+            if(countable == true){
+                flipCount += 1
+            }
+            
+            //flipLabel.text = "Flips : " + String(flipCount)
+            //print(sender.titleLabel!.text!)//取得按鈕上的文字
         }
-        
-        flipCount += 1
-        //flipLabel.text = "Flips : " + String(flipCount)
-        //print(sender.titleLabel!.text!)//取得按鈕上的文字
-        
     }
     
     //重製
     @IBAction func reset(_ sender: Any) {
+        
         game.reset()
         updateCardFace()
+        allCardface = 0
+        flipCount = 0
+        cards.shuffle()
+    }
+    var allCardface = 0//全部卡片要翻的面向0代表目前為反面1代表目前為正面
+    
+    @IBAction func flipAll(_ sender: Any) {
+        if allCardface == 0{//翻反
+            game.flipAll()
+            updateCardFace()
+            allCardface = 1
+        }
+        else{//翻正
+            game.reset()
+            updateCardFace()
+            allCardface = 0
+        }
+        cards.shuffle()
         flipCount = 0
     }
     
-    func getEmoji(at index:Int)->String{//取得卡片上的圖案
-        var emoji:String
-        if index < negativeFace.count{
-            emoji = negativeFace[index]
-        }
-        else{
-            emoji = "?"
-        }
-        return emoji
-    }
+//    func getEmoji(at index:Int)->String{//取得卡片上的圖案
+//        var emoji:String
+//        if index < negativeFace.count{
+//            emoji = negativeFace[index]
+//        }
+//        else{
+//            emoji = "?"
+//        }
+//        return emoji
+//    }
     
     func getEmoji(for card:Card) -> String{//取得卡片上的圖案
         if emoji[card.identifier] == nil,negativeFace.count>0{
-            
             let randomIndex = Int(arc4random_uniform(UInt32(negativeFace.count)))
             emoji[card.identifier] = negativeFace.remove(at: randomIndex)
         }

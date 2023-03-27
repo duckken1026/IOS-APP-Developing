@@ -9,8 +9,33 @@ import Foundation
 
 class MatchingGame{
     var cards: Array<Card>
-    var indexOfOneAndOnlyFaceUpCard: Int?//記錄前一次點擊已翻開的牌
-    
+    var indexOfOneAndOnlyFaceUpCard: Int?{//記錄前一次點擊已翻開的牌
+        get{
+            var foundIndex:Int?
+            
+            for index in cards.indices{
+                if !cards[index].isMatched{
+                    if cards[index].isFaceUp{
+                        if foundIndex == nil{
+                            foundIndex = index
+                        }
+                        else{
+                            return nil
+                        }
+                    }
+                }
+                
+            }
+            return foundIndex
+        }
+        set{
+            for index in cards.indices{
+                if !cards[index].isMatched{
+                    cards[index].isFaceUp = (index == newValue)
+                }
+            }
+        }
+    }
     init(numberOfPairsOfCards: Int){
         cards = []
         for identifier in 1...numberOfPairsOfCards{
@@ -32,29 +57,31 @@ class MatchingGame{
         
         if !cards[index].isMatched{//配對成功按下去就不會有反應
             //若已經有已翻開的牌
+            
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index{
                 if cards[matchIndex].identifier == cards[index].identifier{
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
                 }
                 cards[index].isFaceUp = true
-                indexOfOneAndOnlyFaceUpCard = nil
+                //indexOfOneAndOnlyFaceUpCard = nil
             }
             //點在已翻開的唯一牌上會翻回去
             else if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex == index{
                 cards[index].isFaceUp = false
-                indexOfOneAndOnlyFaceUpCard = nil
+                //indexOfOneAndOnlyFaceUpCard = nil
             }
             else { //no cards face up or 2 cards are face up
-                for flipDownIndex in cards.indices{
-                    if !cards[flipDownIndex].isMatched{ //想要維持在正面
-                        cards[flipDownIndex].isFaceUp = false
-                    }
-                } // all cards set back to face down
+//                for flipDownIndex in cards.indices{
+//                    if !cards[flipDownIndex].isMatched{ //想要維持在正面
+//                        cards[flipDownIndex].isFaceUp = false
+//                    }
+//                } // all cards set back to face down
                 cards[index].isFaceUp = true
                 indexOfOneAndOnlyFaceUpCard = index
             }
         }
+        
         return cards[index]
     }
     
@@ -64,4 +91,16 @@ class MatchingGame{
             cards[i].isMatched = false
         }
     }
+    
+    func flipAll(){
+        for i in cards.indices{
+            cards[i].isFaceUp = true
+            cards[i].isMatched = false
+        }
+    }
+    
+    func isMatched(at index: Int)->Bool{
+        return(cards[index].isMatched)
+    }
+    
 }
