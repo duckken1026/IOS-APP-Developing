@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2048E1729E919DC00BC10E3 /* buttonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2048E1629E919DC00BC10E3 /* buttonView.swift */; };
+		D2048E1929E92CB800BC10E3 /* sheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2048E1829E92CB800BC10E3 /* sheetView.swift */; };
 		D2135CDD29D6A74A000013B6 /* swiftUITestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2135CDC29D6A74A000013B6 /* swiftUITestApp.swift */; };
 		D2135CDF29D6A74A000013B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2135CDE29D6A74A000013B6 /* ContentView.swift */; };
 		D2135CE129D6A74B000013B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2135CE029D6A74B000013B6 /* Assets.xcassets */; };
@@ -14,6 +16,10 @@
 		D2135CEE29D6A74B000013B6 /* swiftUITestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2135CED29D6A74B000013B6 /* swiftUITestTests.swift */; };
 		D2135CF829D6A74B000013B6 /* swiftUITestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2135CF729D6A74B000013B6 /* swiftUITestUITests.swift */; };
 		D2135CFA29D6A74B000013B6 /* swiftUITestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2135CF929D6A74B000013B6 /* swiftUITestUITestsLaunchTests.swift */; };
+		D273C6D629DFE3DF00FC0BC1 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C6D529DFE3DF00FC0BC1 /* IntroView.swift */; };
+		D273C6DA29DFE7A500FC0BC1 /* animalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C6D929DFE7A500FC0BC1 /* animalView.swift */; };
+		D273C6DC29DFE9AB00FC0BC1 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C6DB29DFE9AB00FC0BC1 /* Animal.swift */; };
+		D273C6DE29DFF32500FC0BC1 /* animalRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273C6DD29DFF32500FC0BC1 /* animalRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D2048E1629E919DC00BC10E3 /* buttonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonView.swift; sourceTree = "<group>"; };
+		D2048E1829E92CB800BC10E3 /* sheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sheetView.swift; sourceTree = "<group>"; };
 		D2135CD929D6A74A000013B6 /* swiftUITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftUITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2135CDC29D6A74A000013B6 /* swiftUITestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftUITestApp.swift; sourceTree = "<group>"; };
 		D2135CDE29D6A74A000013B6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +52,10 @@
 		D2135CF329D6A74B000013B6 /* swiftUITestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = swiftUITestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2135CF729D6A74B000013B6 /* swiftUITestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftUITestUITests.swift; sourceTree = "<group>"; };
 		D2135CF929D6A74B000013B6 /* swiftUITestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftUITestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D273C6D529DFE3DF00FC0BC1 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		D273C6D929DFE7A500FC0BC1 /* animalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animalView.swift; sourceTree = "<group>"; };
+		D273C6DB29DFE9AB00FC0BC1 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		D273C6DD29DFF32500FC0BC1 /* animalRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animalRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +108,14 @@
 			children = (
 				D2135CDC29D6A74A000013B6 /* swiftUITestApp.swift */,
 				D2135CDE29D6A74A000013B6 /* ContentView.swift */,
+				D2048E1629E919DC00BC10E3 /* buttonView.swift */,
+				D2048E1829E92CB800BC10E3 /* sheetView.swift */,
+				D273C6D929DFE7A500FC0BC1 /* animalView.swift */,
+				D273C6DB29DFE9AB00FC0BC1 /* Animal.swift */,
 				D2135CE029D6A74B000013B6 /* Assets.xcassets */,
+				D273C6DD29DFF32500FC0BC1 /* animalRow.swift */,
 				D2135CE229D6A74B000013B6 /* Preview Content */,
+				D273C6D529DFE3DF00FC0BC1 /* IntroView.swift */,
 			);
 			path = swiftUITest;
 			sourceTree = "<group>";
@@ -257,8 +275,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D273C6DA29DFE7A500FC0BC1 /* animalView.swift in Sources */,
 				D2135CDF29D6A74A000013B6 /* ContentView.swift in Sources */,
+				D273C6DE29DFF32500FC0BC1 /* animalRow.swift in Sources */,
+				D2048E1729E919DC00BC10E3 /* buttonView.swift in Sources */,
 				D2135CDD29D6A74A000013B6 /* swiftUITestApp.swift in Sources */,
+				D273C6D629DFE3DF00FC0BC1 /* IntroView.swift in Sources */,
+				D2048E1929E92CB800BC10E3 /* sheetView.swift in Sources */,
+				D273C6DC29DFE9AB00FC0BC1 /* Animal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
