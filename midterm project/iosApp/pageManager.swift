@@ -12,11 +12,14 @@ struct pageManager: View {
     var body: some View {
         ZStack{
             if currentScreen == "Login" {
-                Login(currentScreen: self.$currentScreen)
-                //ContentView()
+                //Login(currentScreen: self.$currentScreen)
+                ContentView()
             }
-            else {
+            else if currentScreen == "Register"{
                 Register(currentScreen: self.$currentScreen)
+            }
+            else{
+                ContentView()
             }
         }
     }

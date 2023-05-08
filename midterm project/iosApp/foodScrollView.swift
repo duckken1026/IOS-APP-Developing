@@ -44,6 +44,7 @@ struct foodScrollView: View {
                                     .frame(width: 130, height: 50)
                                     .onTapGesture {
                                         database.buyFood(collection: "noodles", document: food.id!)
+                                        database.addToTotal(foodName: food.name, foodPrice: food.price, foodStock: food.stock, foodImage: food.image)
                                     }
                             }
                             Spacer()
@@ -86,6 +87,7 @@ struct foodScrollView: View {
                                     .frame(width: 130, height: 50)
                                     .onTapGesture {
                                         database.buyFood(collection: "pizza", document: food.id!)
+                                        database.addToTotal(foodName: food.name, foodPrice: food.price, foodStock: food.stock, foodImage: food.image)
                                     }
                             }
                             Spacer()
@@ -131,6 +133,7 @@ struct foodScrollView: View {
                                     .frame(width: 130, height: 50)
                                     .onTapGesture {
                                         database.buyFood(collection: "drinks", document: food.id!)
+                                        database.addToTotal(foodName: food.name, foodPrice: food.price, foodStock: food.stock, foodImage: food.image)
                                     }
                             }
                             Spacer()
@@ -176,6 +179,7 @@ struct foodScrollView: View {
                                     .frame(width: 130, height: 50)
                                     .onTapGesture {
                                         database.buyFood(collection: "foods", document: food.id!)
+                                        database.addToTotal(foodName: food.name, foodPrice: food.price, foodStock: food.stock, foodImage: food.image)
                                     }
                             }
                             Spacer()
@@ -221,6 +225,7 @@ struct foodScrollView: View {
                                     .frame(width: 130, height: 50)
                                     .onTapGesture {
                                         database.buyFood(collection: "iceCream", document: food.id!)
+                                        database.addToTotal(foodName: food.name, foodPrice: food.price, foodStock: food.stock, foodImage: food.image)
                                     }
                             }
                             Spacer()

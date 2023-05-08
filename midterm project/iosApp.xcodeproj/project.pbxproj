@@ -26,6 +26,7 @@
 		D2D51DE62A0360E000E83816 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D51DE52A0360E000E83816 /* Login.swift */; };
 		D2D51DEA2A03A4AC00E83816 /* loginAndRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D51DE92A03A4AC00E83816 /* loginAndRegister.swift */; };
 		D2D986A72A08A386004D071E /* databaseOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D986A62A08A386004D071E /* databaseOperator.swift */; };
+		D2D986A92A08C447004D071E /* shopingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D986A82A08C447004D071E /* shopingCart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		D2D51DE52A0360E000E83816 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		D2D51DE92A03A4AC00E83816 /* loginAndRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginAndRegister.swift; sourceTree = "<group>"; };
 		D2D986A62A08A386004D071E /* databaseOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = databaseOperator.swift; sourceTree = "<group>"; };
+		D2D986A82A08C447004D071E /* shopingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shopingCart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				D27ED0AF29FFB1E500573647 /* GoogleService-Info.plist */,
 				D27ED08329FFB15F00573647 /* iosAppApp.swift */,
 				D27ED08529FFB15F00573647 /* ContentView.swift */,
+				D2D986A82A08C447004D071E /* shopingCart.swift */,
 				D216BF3C2A069F1500F44C5D /* iconManager.swift */,
 				D2D51DE12A03556500E83816 /* Register.swift */,
 				D2D51DE32A03605300E83816 /* pageManager.swift */,
@@ -308,6 +311,7 @@
 				D2C860EA2A07FA84005024BD /* foodScrollView.swift in Sources */,
 				D2D51DE62A0360E000E83816 /* Login.swift in Sources */,
 				D2D51DE22A03556500E83816 /* Register.swift in Sources */,
+				D2D986A92A08C447004D071E /* shopingCart.swift in Sources */,
 				D27ED08429FFB15F00573647 /* iosAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

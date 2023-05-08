@@ -57,6 +57,25 @@ class databaseOperator{
             }
     }
     
+    func addToTotal(foodName:String,foodPrice:Int,foodStock:Int,foodImage:String){//加入到總結清單中
+        let db = Firestore.firestore()
+        if(foodStock > 0){
+            let food = foods(id: "1",name: foodName,price: foodPrice,stock: 1, image: foodImage)
+            do {
+                let documentReference = try db.collection("total").addDocument(from: food)
+                //print(documentReference.documentID)
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    func deleteFromCart(id:String){//從購物車中刪除
+        let db = Firestore.firestore()
+        let documentReference = db.collection("total").document(id)
+        documentReference.delete()
+    }
+    
     func plusOneToNumber(num: Int) -> Int{//將數字加一
         var result = 0
         result = num + 1
@@ -65,7 +84,12 @@ class databaseOperator{
     
     func minusOneToNumber(num: Int) -> Int{//將數字減一
         var result = 0
-        result = num - 1
+        if(num > 0){
+            result = num - 1
+        }
+        else{
+           result = num
+        }
         return result
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct Login: View {
     @Binding var currentScreen:String
@@ -29,6 +30,7 @@ struct Login: View {
                     .padding(.top,10)
                 TextField("你的E-mail", text: $email, prompt: Text("你的E-mail"))
                     .padding(.leading,100)
+                    .keyboardType(.emailAddress)
             }
             Image("PasswordTitle2")
                 .padding(.leading,-160)
@@ -39,33 +41,22 @@ struct Login: View {
                     .padding(.top,10)
                 TextField("你的密碼", text: $password, prompt: Text("你的密碼"))
                     .padding(.leading,100)
+                    .keyboardType(.default)
             }
             Image("button")
                 .padding(.top,30)
                 .onTapGesture {
-                    loginManager.logout()
-                    var state = ""
-                    state = loginManager.loginAccount(email: $email.wrappedValue, password: $password.wrappedValue)
-                    if(state == "email-empty"){
-                        alertTitle = "請輸入email"
+                    Auth.auth().signIn(withEmail: $email.wrappedValue, password: $password.wrappedValue) { result, error in
+                            guard error == nil else {
+                                print("error")//輸入錯誤帳號密碼，登入失敗
+                                return
+                            }
+                            print("success")//成功登入
                     }
-                    else if(state == "password-empty"){
-                        alertTitle = "請輸入密碼"
-                    }
-                    else if(state == "true"){
-                        alertTitle = "登入成功"
-                    }
-                    else{
-                        alertTitle = "登入失敗"
-                    }
-                    showAlert = true
+                    
+                    
                     
                 }
-                .alert(alertTitle, isPresented: $showAlert, actions: {
-                    Button("OK") {
-                        if(alertTitle == "登入成功"){
-                            currentScreen = "Login"} }
-                })
             Image("Don’t have an account")
                 .padding(.top,20)
                 .onTapGesture {

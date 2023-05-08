@@ -15,64 +15,79 @@ struct ContentView: View {
     @StateObject var icon = iconManager()
     @State var foodType = "noodles"
     var body: some View {
-    
-        ZStack{
-            Color(red: 249/255, green: 252/255, blue: 254/255)
-                .ignoresSafeArea()
-            VStack{
-                ZStack{
-                    Image("barBackground")
-                    HStack{
-                        Image(icon.noodleIcon)
-                            .padding(.top,-20)
-                            .onTapGesture {
-                                icon.turnBlackIcon(icon: "noodle")
-                                print("noodle")
-                                foodType = "noodles"
-                            }
-                        Image(icon.pizzaIcon)
-                            .padding(.leading,25)
-                            .padding(.top,-15)
-                            .onTapGesture {
-                                icon.turnBlackIcon(icon: "pizza")
-                                print("pizza")
-                                foodType = "pizza"
-                            }
-                        Image(icon.drinkIcon)
-                            .padding(.leading,10)
-                            .padding(.top,-25)
-                            .onTapGesture {
-                                icon.turnBlackIcon(icon: "drink")
-                                print("drink")
-                                foodType = "drinks"
-                            }
-                        Image(icon.friedFoodIcon)
-                            .padding(.leading,10)
-                            .padding(.top,-20)
-                            .onTapGesture {
-                                icon.turnBlackIcon(icon: "friedFood")
-                                print("friedFood")
-                                foodType = "foods"
-                            }
-                        Image(icon.iceCreamIcon)
-                            .padding(.leading,10)
-                            .padding(.top,-20)
-                            .onTapGesture {
-                                icon.turnBlackIcon(icon: "iceCream")
-                                print("iceCream")
-                                foodType = "iceCream"
-                            }
+        NavigationView {
+            ZStack{
+                Color(red: 249/255, green: 252/255, blue: 254/255)
+                    .ignoresSafeArea()
+                VStack{
+                    Text("歡迎使用鴨鴨訂餐")
+                        .padding(.leading,-177)
+                        .padding(.bottom,-10)
+                    ZStack{
+                        Image("barBackground")
+                        HStack{
+                            Image(icon.noodleIcon)
+                                .padding(.top,-20)
+                                .onTapGesture {
+                                    icon.turnBlackIcon(icon: "noodle")
+                                    print("noodle")
+                                    foodType = "noodles"
+                                }
+                            Image(icon.pizzaIcon)
+                                .padding(.leading,25)
+                                .padding(.top,-15)
+                                .onTapGesture {
+                                    icon.turnBlackIcon(icon: "pizza")
+                                    print("pizza")
+                                    foodType = "pizza"
+                                }
+                            Image(icon.drinkIcon)
+                                .padding(.leading,10)
+                                .padding(.top,-25)
+                                .onTapGesture {
+                                    icon.turnBlackIcon(icon: "drink")
+                                    print("drink")
+                                    foodType = "drinks"
+                                }
+                            Image(icon.friedFoodIcon)
+                                .padding(.leading,10)
+                                .padding(.top,-20)
+                                .onTapGesture {
+                                    icon.turnBlackIcon(icon: "friedFood")
+                                    print("friedFood")
+                                    foodType = "foods"
+                                }
+                            Image(icon.iceCreamIcon)
+                                .padding(.leading,10)
+                                .padding(.top,-20)
+                                .onTapGesture {
+                                    icon.turnBlackIcon(icon: "iceCream")
+                                    print("iceCream")
+                                    foodType = "iceCream"
+                                }
+                        }
                     }
+                    .padding(.bottom,-30)
+                    HStack{
+                        Text(icon.getFoodTypeName(icon: foodType))
+                            .font(.largeTitle)
+                            .padding(.leading,60)
+                        Spacer()
+                        NavigationLink( destination:shopingCart(),
+                            label: {
+                            Text("購物車")
+                                .font(.title2)
+                                .padding(.trailing,60)
+                            })
+                    }
+                    foodScrollView(foodType: self.$foodType)
+                        .padding(.top,-9)
+                    
                 }
-                .padding(.bottom,-30)
-                Text(icon.getFoodTypeName(icon: foodType))
-                    .font(.largeTitle)
-                    .padding(.leading,-170)
-                foodScrollView(foodType: self.$foodType)
-                    .padding(.top,-9)
-                
             }
+            .navigationTitle("哈囉！")
         }
+        
             
             
         
