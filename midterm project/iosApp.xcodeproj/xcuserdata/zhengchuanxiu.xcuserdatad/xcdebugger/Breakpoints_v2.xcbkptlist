@@ -14,9 +14,9 @@
             filePath = "iosApp/loginAndRegister.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "registerAccount()"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "registerAccount(email:password:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -11,7 +11,7 @@ struct DemoApp: App {
     init() {
         FirebaseApp.configure()
     }
-    
+    let accountManager = loginAndRegister()
     var body: some Scene {
         WindowGroup {
            pageManager()

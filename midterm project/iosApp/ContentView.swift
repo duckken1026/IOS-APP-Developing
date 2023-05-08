@@ -11,45 +11,74 @@ import FirebaseFirestoreSwift
 
 
 struct ContentView: View {
-    @FirestoreQuery(collectionPath: "foods") var Foods: [foods]
-    
+
+    @StateObject var icon = iconManager()
+    @State var foodType = "noodles"
     var body: some View {
-            List {
-                ForEach(Foods) { food in
-                    HStack {
-                        Text(food.name)
-                        AsyncImage(url: URL(string:
-                            food.image)) { image in
-                            image.resizable()
-                        } placeholder: {
-                            ProgressView()
-                        }
-                        .frame(width: 50, height: 50)
-                        Spacer()
-                        VStack(alignment: .trailing) {
-                            
-                            Text("Price:"+String(food.price))
-                            Text("stock:"+"\(food.stock)")
-
-                            
+    
+        ZStack{
+            Color(red: 249/255, green: 252/255, blue: 254/255)
+                .ignoresSafeArea()
+            VStack{
+                ZStack{
+                    Image("barBackground")
+                    HStack{
+                        Image(icon.noodleIcon)
+                            .padding(.top,-20)
+                            .onTapGesture {
+                                icon.turnBlackIcon(icon: "noodle")
+                                print("noodle")
+                                foodType = "noodles"
                             }
-                            
-                        }
+                        Image(icon.pizzaIcon)
+                            .padding(.leading,25)
+                            .padding(.top,-15)
+                            .onTapGesture {
+                                icon.turnBlackIcon(icon: "pizza")
+                                print("pizza")
+                                foodType = "pizza"
+                            }
+                        Image(icon.drinkIcon)
+                            .padding(.leading,10)
+                            .padding(.top,-25)
+                            .onTapGesture {
+                                icon.turnBlackIcon(icon: "drink")
+                                print("drink")
+                                foodType = "drinks"
+                            }
+                        Image(icon.friedFoodIcon)
+                            .padding(.leading,10)
+                            .padding(.top,-20)
+                            .onTapGesture {
+                                icon.turnBlackIcon(icon: "friedFood")
+                                print("friedFood")
+                                foodType = "foods"
+                            }
+                        Image(icon.iceCreamIcon)
+                            .padding(.leading,10)
+                            .padding(.top,-20)
+                            .onTapGesture {
+                                icon.turnBlackIcon(icon: "iceCream")
+                                print("iceCream")
+                                foodType = "iceCream"
+                            }
                     }
-                VStack{
-                    Image("topbilloffer")
-                        .onTapGesture {
-                            print("a")
-                    }
-                    Image("background")
-                }.onTapGesture {
-                    print("b")
                 }
+                .padding(.bottom,-30)
+                Text(icon.getFoodTypeName(icon: foodType))
+                    .font(.largeTitle)
+                    .padding(.leading,-170)
+                foodScrollView(foodType: self.$foodType)
+                    .padding(.top,-9)
+                
             }
-    }
+        }
+            
+            
         
+    }
+                    
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
