@@ -9,9 +9,10 @@ import SwiftUI
 
 struct welcomePage: View {
     var text:String
+    var image:String
     var body: some View {
         VStack{
-            Image("welcome_balloon")
+            Image(image)
                 .resizable()
                 .frame(width: 350,height: 250)
             Text(text)
@@ -22,6 +23,6 @@ struct welcomePage: View {
 
 struct welcomePage_Previews: PreviewProvider {
     static var previews: some View {
-        welcomePage(text: "")
+        welcomePage(text: "",image: "")
     }
 }

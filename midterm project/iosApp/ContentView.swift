@@ -25,11 +25,14 @@ struct ContentView: View {
                         Button("登出"){
                             do {
                                try Auth.auth().signOut()
-                                print("out")
+                               currentScreen = "thank you"
+                               print("out")
                             } catch {
                                print(error)
                             }
-                            currentScreen = "Login"
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                currentScreen = "Login"
+                            }
                         }
                     }
                     .padding(.leading,-177)

@@ -22,10 +22,13 @@ struct pageManager: View {
                 ContentView(currentScreen: self.$currentScreen)
             }
             else if currentScreen == "welcomePage"{
-                welcomePage(text: "歡迎使用鴨鴨訂餐！")
+                welcomePage(text: "歡迎使用鴨鴨訂餐！", image: "welcome_balloon")
             }
             else if currentScreen == "registerSuccessPage"{
-                welcomePage(text: "註冊成功！")
+                welcomePage(text: "註冊成功！",image: "welcome_balloon")
+            }
+            else if currentScreen == "thank you"{
+                welcomePage(text: "歡迎下次光臨！",image: "message_thank_you")
             }
             else{
                 errorPage(currentScreen: self.$currentScreen)

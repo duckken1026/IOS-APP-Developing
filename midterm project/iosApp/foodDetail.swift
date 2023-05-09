@@ -14,6 +14,7 @@ struct foodDetail: View {
     var body: some View {
         VStack{
             Text(name)
+                .font(.largeTitle)
             AsyncImage(url: URL(string:
                 image)) { image in
                 image.resizable()
