@@ -8,10 +8,10 @@
 import SwiftUI
 import FirebaseFirestore
 import FirebaseFirestoreSwift
-
+import FirebaseAuth
 
 struct ContentView: View {
-
+    @Binding var currentScreen:String
     @StateObject var icon = iconManager()
     @State var foodType = "noodles"
     var body: some View {
@@ -20,9 +20,21 @@ struct ContentView: View {
                 Color(red: 249/255, green: 252/255, blue: 254/255)
                     .ignoresSafeArea()
                 VStack{
-                    Text("歡迎使用鴨鴨訂餐")
-                        .padding(.leading,-177)
-                        .padding(.bottom,-10)
+                    HStack{
+                        Text("歡迎使用鴨鴨訂餐")
+                        Button("登出"){
+                            do {
+                               try Auth.auth().signOut()
+                                print("out")
+                            } catch {
+                               print(error)
+                            }
+                            currentScreen = "Login"
+                        }
+                    }
+                    .padding(.leading,-177)
+                    .padding(.bottom,-10)
+                    
                     ZStack{
                         Image("barBackground")
                         HStack{
@@ -85,7 +97,9 @@ struct ContentView: View {
                     
                 }
             }
-            .navigationTitle("哈囉！")
+            
+            .navigationTitle("哈囉!")
+            
         }
         
             
@@ -97,6 +111,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(currentScreen: .constant("Login"))
     }
 }

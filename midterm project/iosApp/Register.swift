@@ -55,28 +55,28 @@ struct Register: View {
             Image("registerButton")
                 .padding(.top,30)
                 .onTapGesture {
-                    var state = ""
-                    state = registerManager.registerAccount(email: $email.wrappedValue, password: $password.wrappedValue)
-                    if(state == "email-empty"){
-                        alertTitle = "請輸入email"
+                    Auth.auth().createUser(withEmail: $email.wrappedValue, password: $password.wrappedValue) { result, error in
+                        guard let user = result?.user,error == nil else{
+                            print("error")
+                            currentScreen = "error"
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                currentScreen = "Register"
+                            }
+                            return
+                        }
+                        print("success")//成功註冊
+                        currentScreen = "registerSuccessPage"
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            currentScreen = "Login"
+                        }
                     }
-                    else if(state == "password-empty"){
-                        alertTitle = "請輸入密碼"
+                    do {
+                       try Auth.auth().signOut()
+                        print("out")
+                    } catch {
+                       print(error)
                     }
-                    else if(state == "true"){
-                        alertTitle = "註冊成功"
-                    }
-                    else{
-                        alertTitle = "註冊失敗"
-                    }
-                    
-                    showAlert = true
                 }
-                .alert(alertTitle, isPresented: $showAlert, actions: {
-                    Button("OK") {
-                        if(alertTitle == "註冊成功"){
-                            currentScreen = "Login"} }
-                })
             Image("Already have an account")
                 .padding(.top,5)
                 .onTapGesture {

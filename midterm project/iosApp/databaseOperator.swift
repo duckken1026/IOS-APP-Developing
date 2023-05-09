@@ -60,7 +60,7 @@ class databaseOperator{
     func addToTotal(foodName:String,foodPrice:Int,foodStock:Int,foodImage:String){//加入到總結清單中
         let db = Firestore.firestore()
         if(foodStock > 0){
-            let food = foods(id: "1",name: foodName,price: foodPrice,stock: 1, image: foodImage)
+            let food = foods(id: "1",name: foodName,price: foodPrice,stock: 1, image: foodImage,detail: "")
             do {
                 let documentReference = try db.collection("total").addDocument(from: food)
                 //print(documentReference.documentID)

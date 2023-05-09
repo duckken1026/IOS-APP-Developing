@@ -22,8 +22,12 @@ struct foodScrollView: View {
             ScrollView {
                 ForEach(noodles) { food in
                     ZStack{
-                        Image("background")
-                            .resizable()
+                        NavigationLink{
+                            foodDetail(image:food.image,name:food.name,detail: food.detail)
+                        }label: {
+                            Image("background")
+                                .resizable()
+                        }
                         HStack {
                             AsyncImage(url: URL(string:
                                 food.image)) { image in
@@ -65,8 +69,12 @@ struct foodScrollView: View {
             ScrollView {
                 ForEach(pizza) { food in
                     ZStack{
-                        Image("background")
-                            .resizable()
+                        NavigationLink{
+                            foodDetail(image:food.image,name:food.name,detail: food.detail)
+                        }label: {
+                            Image("background")
+                                .resizable()
+                        }
                         HStack {
                             AsyncImage(url: URL(string:
                                 food.image)) { image in
@@ -101,9 +109,6 @@ struct foodScrollView: View {
                     .padding(.leading,25)
                     .padding(.trailing,25)
                     .padding(.bottom,-60)
-                    .onTapGesture {
-                        print(food.name)
-                    }
                 }
             }
         }
@@ -111,8 +116,12 @@ struct foodScrollView: View {
             ScrollView {
                 ForEach(drinks) { food in
                     ZStack{
-                        Image("background")
-                            .resizable()
+                        NavigationLink{
+                            foodDetail(image:food.image,name:food.name,detail: food.detail)
+                        }label: {
+                            Image("background")
+                                .resizable()
+                        }
                         HStack {
                             AsyncImage(url: URL(string:
                                 food.image)) { image in
@@ -147,9 +156,6 @@ struct foodScrollView: View {
                     .padding(.leading,25)
                     .padding(.trailing,25)
                     .padding(.bottom,-60)
-                    .onTapGesture {
-                        print(food.name)
-                    }
                 }
             }
         }
@@ -157,8 +163,12 @@ struct foodScrollView: View {
             ScrollView {
                 ForEach(foods) { food in
                     ZStack{
-                        Image("background")
-                            .resizable()
+                        NavigationLink{
+                            foodDetail(image:food.image,name:food.name,detail: food.detail)
+                        }label: {
+                            Image("background")
+                                .resizable()
+                        }
                         HStack {
                             AsyncImage(url: URL(string:
                                 food.image)) { image in
@@ -193,9 +203,6 @@ struct foodScrollView: View {
                     .padding(.leading,25)
                     .padding(.trailing,25)
                     .padding(.bottom,-60)
-                    .onTapGesture {
-                        print(food.name)
-                    }
                 }
             }
         }
@@ -203,8 +210,12 @@ struct foodScrollView: View {
             ScrollView {
                 ForEach(iceCream) { food in
                     ZStack{
-                        Image("background")
-                            .resizable()
+                        NavigationLink{
+                            foodDetail(image:food.image,name:food.name,detail: food.detail)
+                        }label: {
+                            Image("background")
+                                .resizable()
+                        }
                         HStack {
                             AsyncImage(url: URL(string:
                                 food.image)) { image in
@@ -239,14 +250,9 @@ struct foodScrollView: View {
                     .padding(.leading,25)
                     .padding(.trailing,25)
                     .padding(.bottom,-60)
-                    .onTapGesture {
-                        print(food.name)
-                    }
                 }
             }
-        }
-        
-        
+    }
     }
 }
 

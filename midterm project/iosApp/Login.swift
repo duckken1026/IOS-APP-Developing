@@ -49,13 +49,18 @@ struct Login: View {
                     Auth.auth().signIn(withEmail: $email.wrappedValue, password: $password.wrappedValue) { result, error in
                             guard error == nil else {
                                 print("error")//輸入錯誤帳號密碼，登入失敗
+                                currentScreen = "error"
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                    currentScreen = "Login"
+                                }
                                 return
                             }
                             print("success")//成功登入
+                            currentScreen = "welcomePage"
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                currentScreen = "contentView"
+                            }
                     }
-                    
-                    
-                    
                 }
             Image("Don’t have an account")
                 .padding(.top,20)

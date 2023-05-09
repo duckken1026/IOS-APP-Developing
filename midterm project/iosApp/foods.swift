@@ -8,4 +8,5 @@ struct foods: Codable, Identifiable {
     let price: Int
     var stock: Int
     let image: String
+    let detail: String
 }
