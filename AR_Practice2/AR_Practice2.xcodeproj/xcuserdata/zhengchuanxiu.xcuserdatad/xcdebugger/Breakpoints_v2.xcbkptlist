@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "20C7D293-DB79-46B6-B4B1-DC6AD3DA0030"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0399703D-8D53-4491-88BE-B41B3C03D610"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AR_Practice2/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "0399703D-8D53-4491-88BE-B41B3C03D610 - de189c69da2d2bb3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AR_Practice2.ViewController.faceLabel.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "AR_Practice2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhengchuanxiu/Documents/IOS%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/AR_Practice2/AR_Practice2/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "0399703D-8D53-4491-88BE-B41B3C03D610 - 9d2cb93b5ba71c47"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AR_Practice2.ViewController.faceLabel.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "AR_Practice2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhengchuanxiu/Documents/IOS%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/AR_Practice2/AR_Practice2/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "0399703D-8D53-4491-88BE-B41B3C03D610 - 2f9a50e27fcf56b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AR_Practice2.ViewController.faceLabel.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "AR_Practice2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhengchuanxiu/Documents/IOS%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/AR_Practice2/AR_Practice2/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "0399703D-8D53-4491-88BE-B41B3C03D610 - 72e4c0a371fda0b9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AR_Practice2.ViewController.faceLabel.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "AR_Practice2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhengchuanxiu/Documents/IOS%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/AR_Practice2/AR_Practice2/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "0399703D-8D53-4491-88BE-B41B3C03D610 - 266375e1c54eb143"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AR_Practice2.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; AR_Practice2.ViewController"
+                  moduleName = "AR_Practice2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhengchuanxiu/Documents/IOS%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/AR_Practice2/AR_Practice2/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "0399703D-8D53-4491-88BE-B41B3C03D610 - 1338625c1ffbfdd5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AR_Practice2.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;AR_Practice2.ViewController&gt;"
+                  moduleName = "AR_Practice2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhengchuanxiu/Documents/IOS%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/AR_Practice2/AR_Practice2/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "0399703D-8D53-4491-88BE-B41B3C03D610 - 266375e1c54eb143"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AR_Practice2.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; AR_Practice2.ViewController"
+                  moduleName = "AR_Practice2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhengchuanxiu/Documents/IOS%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/AR_Practice2/AR_Practice2/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "0399703D-8D53-4491-88BE-B41B3C03D610 - 1338625c1ffbfdd5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AR_Practice2.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;AR_Practice2.ViewController&gt;"
+                  moduleName = "AR_Practice2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zhengchuanxiu/Documents/IOS%E7%A8%8B%E5%BC%8F%E8%A8%AD%E8%A8%88/AR_Practice2/AR_Practice2/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
